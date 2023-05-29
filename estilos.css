@@ -378,6 +378,37 @@ body {
   color: white;
   text-decoration: none;
 }
+/* EFECTO salto de las IMAGENES */
+ .pop_imagen .imgMove:hover {
+  animation: mymove 2s 1;
+}
+
+@keyframes mymove {
+  0% {
+    margin-top: 0px;
+  }
+
+  20% {
+    margin-top: -10px;
+  }
+
+  40% {
+    margin-top: 10px;
+  }
+
+  60% {
+    margin-top: -8px;
+  }
+
+  80% {
+    margin-top: 5px;
+  }
+
+  100% {
+    margin-top: 0px;
+  }
+}
+
 
 @media (max-width: 800px) {
   .header .display {
