@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/e15e8c34af.js" crossorigin="anonymous"></script>
+<!--CDN de Vue, version de desarrollo -->
+<script src="https://unpkg.com/vue@next"></script>
+    <title>Travel Strat</title>
+
+    <!-- Hoja de estilos externa -->
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+    <!-- se encuentra la estructura principal de la aplicación Vue.js. -->
+    <div id="app">
+        <!-- hay un menú de navegación con cuatro botones -->
+        <header>
+            <nav>
+                <div class="container1">
+                    <div id="header" class="header">
+                        <div class="menu flexMenu">
+                            <div class="grupo1_menu flex1">
+                                <a href="./index.html" id="logoMenu">
+                                <img src="./assets/img/home/LOGO-eyi.svg" alt="logo Travel-Strat">  
+                                </a>
+                                <div id="iconMenu" class="iconMenu display">
+                                    <img class="icon" src="./assets/icons/icon-menu.png" alt="">
+                                </div>
+                            </div>
+                      
+                            <div id="grupo2_menu" class="grupo2_menu flex2">
+                                <div class=" flex2-1">
+                                    <!-- atributo v-on:click que está enlazado a un método show y pasa un argumento que indica qué sección se debe mostrar. -->
+                                    <div class="itemMenu">
+                                        <button v-on:click="show('home')">Home</button>
+                                    </div>
+                                    <div class="itemMenu" >
+                                        <button v-on:click="show('alquiler')">Alquiler</button>
+                                    </div>
+                                    <div class="itemMenu">
+                                        <button v-on:click="show('combos')">Combos</button>
+                                    </div>
+                                    <div class="itemMenu">
+                                        <button v-on:click="show('sobre')">Nosotros</button>
+                                    </div>
+                                </div>
+                                <div class="redesMenu">
+                                <a  href="https://www.twitter.com" target="_blank"><i class="glowon fa fa-twitter fa-2x"
+                                aria-hidden="true"></i></a>&nbsp;&nbsp;
+                                <a  href="https://www.facebook.com" target="_blank"> <i class="glowon fa fa-facebook fa-2x"
+                                aria-hidden="true"></i></a>&nbsp;&nbsp;
+                                <a href="https://www.pinterest" target="_blank"> <i class="glowon fa fa-pinterest fa-2x"
+                                aria-hidden="true"></i></a>&nbsp;&nbsp;
+                                <a href="https://www.instagram.com/hobbystarg/" target="_blank"><i class="glowon fa fa-instagram fa-2x"
+                                aria-hidden="true"></i></a>&nbsp;&nbsp;
+                                <a href="https://www.linkedin.com/in/prof-ariel-palazzesi/" target="_blank"><i class="glowon fa fa-linkedin fa-2x"
+                                aria-hidden="true"></i> </a>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </nav>
+            <!-- cuatro bloques <div> que contienen componentes personalizados:
+            <home>, <alquiler>, <combos>, <sobre>. Estos componentes representan las
+             diferentes secciones de la aplicación.     -->
+        </header>
+<!-- valor de estas propiedades, los bloques se mostrarán o se ocultarán. -->
+        <div v-show="home_visible">
+            <home>
+                <div class="pop_ofrecer">
+                    <div class="pop_linea pop_flex">
+                        <div class="pop_texto">
+                            <h3>HOLA!</h3>
+                        </div>
+                        <div class="pop_btn1 cerrar_pop">
+                            <p>X</p>
+                        </div>
+                    </div>
+                    <div class="pop_linea">
+                        <div class="pop_imagen">
+                            <img src="./assets/img/home/logotipo-avion-papel_579179-1010.avif" alt="mje_avion">
+                        </div>
+                    </div>
+            
+                    <hr>
+            
+                    <div class="pop_linea">
+                        <p>Si te resulto importante la informacion haz clic en "Registrar".</p>
+                        <p>Así nos podremos comunicar con vos y conocerás las ofertas mas antes para tu plan de viaje.</p>
+                        <br>
+                        <h2>¡Anímate!</h2>
+                    </div>
+            
+                    <hr>
+                    <div class="pop_linea pop_aling_derecha">
+                        <div class="pop_btn2">
+                            <p><a href="registrate">REGISTRAR</a></p>
+                        </div>
+                    </div>
+            
+                </div>
+            </home>
+        </div>
+        <div v-show="alquiler_visible">
+            <alquiler></alquiler>
+        </div>
+        <div v-show="combos_visible">
+            <combos></combos>
+        </div>
+        <div v-show="sobre_visible">
+            <sobre></sobre>
+        </div>
+
+        <footer>
+            <mifooter>
+                
+            </mifooter>
+        </footer>
+    </div>
+
+
+    
+
+    <!-- Script con los componentes -->
+    <script src="js/componentes.js"></script>
+
+    <!-- Nuestro script con Vue-->
+    <script src="js/scriptvue.js"></script>
+
+
+    </script>
+</body>
+
+</html>
